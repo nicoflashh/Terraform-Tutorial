@@ -24,3 +24,6 @@ En caso de que no lo hayas hecho:
      "terraform init", "terraform plan", "terraform apply"
      Para borrar la instancia EC2, usaremos el comando "terraform destroy"
     
+
+5. Una vez hemos terminado con el ejemplo basico, recomeindo leer el archivo 'teoria.txt' antes de proceder con el siguiente ejercicio.
+6. Configuramos nuestro archivo terraform para crear el S3Bucket y DynamoDB. Aplicamos commandos. 
