@@ -12,18 +12,20 @@ provider "aws" {
 }
 #S3 Bucket
 resource "aws_s3_bucket" "terraform_state" {
-    bucket = "devops-directive-tf-state"
+    bucket = "nicolas-laborda-terraform-tf-state"
     force_destroy = true
     versioning{
         enabled = true
     }
-    server_side_encryption_configuration {
-        rule{
-            apply_server_side_encryption_by_default {
-                sse_algorithm = "AES256"
-            }
+}
+resource "aws_s3_bucket_server_side_encryption_configuration" "ejemplo1" {
+    bucket = aws_s3_bucket.terraform_state.bucket
+    rule {
+        apply_server_side_encryption_by_default {
+          sse_algorithm = "AES256"
         }
     }
+  
 }
 #DynamoDB
 resource "aws_dynamodb_table" "terraform_locks" {
